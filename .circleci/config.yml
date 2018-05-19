@@ -44,5 +44,5 @@ workflows:
           requires:
             - build
       - e2e:
-      -   requires:
-      -     - build
+          requires:
+            - build
