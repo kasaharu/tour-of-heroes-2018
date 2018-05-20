@@ -16,6 +16,14 @@ jobs:
       - run: echo "Start lint"
       - run: yarn install
       - run: yarn lint
+  stylelint:
+    docker:
+      - image: circleci/node:8.9.4-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start stylelint"
+      - run: yarn install
+      - run: yarn stylelint
   test:
     docker:
       - image: circleci/node:8.9.4-stretch-browsers
@@ -38,6 +46,9 @@ workflows:
     jobs:
       - build
       - lint:
+          requires:
+            - build
+      - stylelint:
           requires:
             - build
       - test:
