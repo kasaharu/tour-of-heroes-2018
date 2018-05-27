@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -9,6 +11,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+        HeroesComponent,
       ],
     }).compileComponents();
   }));
