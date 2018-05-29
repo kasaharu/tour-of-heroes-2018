@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "stylelint": "stylelint 'src/**/*.scss'"
+    "stylelint": "stylelint 'src/**/*.scss'",
+    "wd": "yarn webdash serve"
   },
   "private": true,
   "dependencies": {
