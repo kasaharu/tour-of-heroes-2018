@@ -24,4 +24,10 @@ describe('HeroesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('select hero', () => {
+    const hero = { id: 42, name: 'Test' };
+    component.onSelect(hero);
+    expect(component.selectedHero).toEqual(hero);
+  });
 });
