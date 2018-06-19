@@ -25,4 +25,9 @@ describe('HeroDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('call the getHero method', () => {
+    component.getHero(11);
+    expect(component.hero.name).toEqual('Mr. Nice');
+  });
 });
