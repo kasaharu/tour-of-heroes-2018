@@ -30,4 +30,12 @@ describe('HeroDetailComponent', () => {
     component.getHero(11);
     expect(component.hero.name).toEqual('Mr. Nice');
   });
+
+  it('call the goBack method', () => {
+    component.location.go('/path1');
+    component.location.go('/path2');
+
+    component.goBack();
+    expect(component.location.isCurrentPathEqualTo('/path1')).toBeTruthy();
+  });
 });
