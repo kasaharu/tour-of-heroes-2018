@@ -163,9 +163,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/http@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-6.0.4.tgz#5598c6eec895014da9242c22236af2757ae9fef1"
+"@angular/http@^6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-6.0.6.tgz#bfb3ef8177c424c2a7b9af2bcfd9f3503913cbf1"
   dependencies:
     tslib "^1.9.0"
 
