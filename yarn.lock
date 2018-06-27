@@ -173,9 +173,9 @@
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.0.6.tgz#270db3e6ff3eda2c1e828af7ea2fe2e16a8e17cb"
 
-"@angular/platform-browser-dynamic@^6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.3.tgz#b27e26c06df4ce34879cefd818e7ff394764f834"
+"@angular/platform-browser-dynamic@^6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.6.tgz#20c5cf50d9c3b08cf8e34ee1d5f15af6921fee98"
   dependencies:
     tslib "^1.9.0"
 
