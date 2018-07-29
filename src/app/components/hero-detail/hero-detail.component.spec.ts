@@ -3,7 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { of } from 'rxjs';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService } from '../../services/hero.service';
 
 describe('HeroDetailComponent', () => {
   let component: HeroDetailComponent;
@@ -13,6 +15,9 @@ describe('HeroDetailComponent', () => {
     TestBed.configureTestingModule({
       imports: [FormsModule, RouterTestingModule, HttpClientTestingModule],
       declarations: [ HeroDetailComponent ],
+      providers: [
+        { provide: HeroService, useValue: { getHero: () => {} } },
+      ],
     })
     .compileComponents();
   }));
@@ -20,6 +25,10 @@ describe('HeroDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeroDetailComponent);
     component = fixture.componentInstance;
+
+    const heroService = TestBed.get(HeroService);
+    spyOn(heroService, 'getHero').and.returnValue(of({ id: 11, name: 'Mr. Nice' }));
+
     fixture.detectChanges();
   });
 
