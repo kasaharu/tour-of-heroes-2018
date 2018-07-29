@@ -1,14 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { HeroService } from './hero.service';
 
 describe('HeroService', () => {
+  let httpTestingController: HttpTestingController;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [HeroService],
     });
+
+    httpTestingController = TestBed.get(HttpTestingController);
   });
 
   it('should be created', inject([HeroService], (service: HeroService) => {
@@ -16,8 +20,11 @@ describe('HeroService', () => {
   }));
 
   it('call the getHero method', inject([HeroService], (service: HeroService) => {
-    service.getHero(11).subscribe(hero => {
-      expect(hero).toEqual({ id: 11, name: 'Mr. Nice' });
-    });
+    const targetUrl = 'api/heroes/11';
+    service.getHero(11).subscribe();
+    const req = httpTestingController.expectOne(targetUrl);
+
+    expect(req.request.method).toEqual('GET');
+    expect(req.request.url).toEqual(targetUrl);
   }));
 });
