@@ -1,6 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
+import { Hero } from '../models/hero';
 import { HeroService } from './hero.service';
 
 describe('HeroService', () => {
@@ -50,8 +51,8 @@ describe('HeroService', () => {
 
   it('call the addHero method', inject([HeroService], (service: HeroService) => {
     const targetUrl = 'api/heroes';
-    const targetHero = { id: null, name: 'New Hero' };
-    service.addHero(targetHero).subscribe();
+    const targetHero = { name: 'New Hero' };
+    service.addHero(targetHero as Hero).subscribe();
     const req = httpTestingController.expectOne(targetUrl);
 
     expect(req.request.method).toEqual('POST');
