@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { Hero } from '../models/hero';
-import { HEROES } from '../mocks/mock-heroes';
 import { MessageService } from '../services/message.service';
 
 const httpOptions = {
