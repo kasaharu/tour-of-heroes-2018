@@ -69,4 +69,14 @@ describe('HeroService', () => {
     expect(req.request.method).toEqual('DELETE');
     expect(req.request.url).toEqual(targetUrl);
   }));
+
+  it('call the searchHeroes method', inject([HeroService], (service: HeroService) => {
+    const term = 'hero';
+    const targetUrl = `api/heroes/?name=${term}`;
+    service.searchHeroes(term).subscribe();
+    const req = httpTestingController.expectOne(targetUrl);
+
+    expect(req.request.method).toEqual('GET');
+    expect(req.request.url).toEqual(targetUrl);
+  }));
 });
