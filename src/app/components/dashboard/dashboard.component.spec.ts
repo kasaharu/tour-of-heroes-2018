@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
 import { DashboardComponent } from './dashboard.component';
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
 import { HeroService } from '../../services/hero.service';
 import { HEROES } from '../../mocks/mock-heroes';
 
@@ -13,7 +14,7 @@ describe('DashboardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ DashboardComponent ],
+      declarations: [DashboardComponent, HeroSearchComponent],
       providers: [
         { provide: HeroService, useValue: { getHeroes: () => {} } },
       ],
